@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ho Thi Ngoc Tram - Resume</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --text: #333;
+            --light-bg: #f4f7f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--light-bg);
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .resume-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--light-bg);
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent);
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            margin: 10px 0;
+            color: var(--primary);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: var(--accent);
+            border-left: 4px solid var(--accent);
+            padding-left: 15px;
+            text-transform: uppercase;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .summary {
+            font-style: italic;
+            text-align: center;
+            font-size: 1.1em;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .exp-item {
+            margin-bottom: 25px;
+        }
+
+        .exp-title {
+            font-weight: bold;
+            color: var(--primary);
+            display: block;
+        }
+
+        .exp-meta {
+            font-size: 0.85em;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        ul.skills-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skills-list li {
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+
+        /* 🎵 Music button style */
+        .music-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+            background: #3498db;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .resume-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="resume-container">
+        <header>
+            <img src="images2/profile.jpg" alt="Ho Thi Ngoc Tram" class="profile-img">
+            <h1>Ho Thi Ngoc Tram</h1>
+            <div class="contact-info">
+                <span>📞 +84 9414051191</span>
+                <span>✉️ 114035077@live.asia.edu.tw</span>
+                <span>🌐 School Asia University</span>
+                <span>📍 Viet Nam</span>
+            </div>
+        </header>
+
+        <div class="summary">
+            "I am a Finance Investment expert, Investment is my life"
+        </div>
+
+        <div class="grid">
+            <section class="section">
+                <h2>Education</h2>
+                <div class="exp-item">
+                    <span class="exp-title">Asia University</span>
+                    <span class="exp-meta">Graduate</span>
+                    <p>Focused on economics, numerical analysis, and understanding financial systems.</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Experience</h2>
+                <div class="exp-item">
+                    <span class="exp-title">Investing Service Staff</span>
+                    <span class="exp-meta">Global Businesses</span>
+                    <p>Gained experience in professional analysis and real-world economic observation with many
+                        businesses around the world.</p>
+                </div>
+            </section>
+        </div>
+
+        <section class="section">
+            <h2>Technical Skills</h2>
+            <ul class="skills-list">
+                <li>Photoshop</li>
+                <li>Analysis</li>
+                <li>Numerical Modeling</li>
+                <li>Economic Research</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Interests & Hobbies</h2>
+            <p>
+                I usually catch up with the news which is one of the main elements that can make a big impact on how the
+                money grows.
+            </p>
+        </section>
+    </div>
+
+    <!-- 🎵 Background Music -->
+    <audio id="bg-music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- 🎵 Button -->
+    <button class="music-btn" onclick="toggleMusic()">🎵 Play Music</button>
+
+    <script>
+        const music = document.getElementById('bg-music');
+        const btn = document.querySelector('.music-btn');
+
+        function toggleMusic() {
+            if (music.paused) {
+                music.play();
+                btn.innerText = "⏸ Pause Music";
+            } else {
+                music.pause();
+                btn.innerText = "🎵 Play Music";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
